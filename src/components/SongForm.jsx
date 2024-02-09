@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { Form } from 'react-bootstrap'
 const SongForm = ({ onSubmit, initialValue }) => {
   const [song, setSong] = useState({
     song: initialValue.song || '',
@@ -14,7 +14,7 @@ const SongForm = ({ onSubmit, initialValue }) => {
   }
 
   const createInputElement = (elementName) => (
-    <div className="label">
+    <div className="label ">
       <label>{elementName}</label>
       <input
         onChange={handleChangeInput}
@@ -23,6 +23,18 @@ const SongForm = ({ onSubmit, initialValue }) => {
         value={song[elementName.toLowerCase()]}
       />
     </div>
+    // <Form>
+    //   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+    //     <Form.Label>{elementName}</Form.Label>
+    //     <Form.Control
+    //       placeholder={`${elementName.toLowerCase()} name`}
+    //       onChange={handleChangeInput}
+    //       type="text"
+    //       name={elementName.toLowerCase()}
+    //       value={song[elementName.toLowerCase()]}
+    //     />
+    //   </Form.Group>
+    // </Form>
   )
 
   const handleSubmit = (evt) => {
@@ -37,7 +49,7 @@ const SongForm = ({ onSubmit, initialValue }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="glasscss">
       {createInputElement('Song')}
       {createInputElement('Album')}
       <button type="submit" disabled={!song.song || !song.album}>

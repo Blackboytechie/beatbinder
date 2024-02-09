@@ -5,8 +5,11 @@ import { v4 as uuidv4 } from 'uuid'
 // Local files
 import { createSong } from '../services/songsApi'
 import SongForm from './SongForm'
+import { useTheme } from '../ContextApi/ThemeProvider'
 
 const AddSong = () => {
+  //theme
+  const {currentTheme} = useTheme();
   const queryClient = useQueryClient()
 
   const createSongMutation = useMutation({
@@ -25,8 +28,8 @@ const AddSong = () => {
   }
 
   return (
-    <div>
-      <h2>Add New Song</h2>
+    <div className='w-100'>
+      <h4 style={{color:currentTheme.textColor}}>Add New Song</h4>
       <SongForm onSubmit={handleAddSong} initialValue={{}} />
     </div>
   )

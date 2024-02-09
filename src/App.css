@@ -1,6 +1,8 @@
 body {
   font-size: 16px;
-  text-align: center;
+  /* text-align: center; */
+  /* background: grey; */
+  background-color: var(--bg-color);
 }
 
 form {
@@ -46,4 +48,23 @@ button[type='submit'] {
 
 .song-heading {
   cursor: pointer;
+}
+
+.scrollable-scrollbar {
+  overflow-y: auto;
+  height: 80vh;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.glasscss {
+  /* margin: '0px 10px 0px 10px'; */
+  /* margin-right: 20px; */
+  /* margin-left: 20px; */
+  /* margin: 20px; */
+  background: rgba(243, 235, 235, 0.51);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3.2px);
+  -webkit-backdrop-filter: blur(3.2px);
+  /* border: 1px solid rgba(255, 255, 255, 1); */
 }

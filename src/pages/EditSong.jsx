@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 // Local files
 import { fetchSong, updateSong } from '../services/songsApi'
 import SongForm from '../components/SongForm'
+import { useTheme } from '../ContextApi/ThemeProvider'
 
 const EditSong = () => {
   const queryClient = useQueryClient()
